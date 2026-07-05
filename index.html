@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scientific Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ── App wrapper ── -->
+  <div class="app" id="app">
+
+    <!-- ── Top bar ── -->
+    <div class="top-bar">
+      <span class="app-title">Scientific Calc</span>
+      <div class="top-actions">
+        <button class="icon-btn" id="soundToggle" title="Toggle Sound">🔊</button>
+        <button class="icon-btn" id="historyToggle" title="History">📝</button>
+        <button class="icon-btn" id="themeToggle" title="Toggle Theme">🌙</button>
+      </div>
+    </div>
+
+    <!-- ── Main layout ── -->
+    <div class="main-layout">
+
+      <!-- ── Calculator card ── -->
+      <div class="calculator" id="calculator">
+
+        <!-- Display -->
+        <div class="display-wrap">
+          <div id="voiceStatus" class="voice-status hidden">🎤 Listening...</div>
+          <div id="expression" class="expression"></div>
+          <div id="result" class="result">0</div>
+          <button class="copy-btn" id="copyBtn" title="Copy result">⧉</button>
+          <div id="copyMsg" class="copy-msg hidden">Copied!</div>
+        </div>
+
+        <!-- Scientific row -->
+        <div class="btn-grid scientific-grid">
+          <button class="btn btn-sci" data-val="sin(">sin</button>
+          <button class="btn btn-sci" data-val="cos(">cos</button>
+          <button class="btn btn-sci" data-val="tan(">tan</button>
+          <button class="btn btn-sci" data-val="log(">log</button>
+          <button class="btn btn-sci" data-val="ln(">ln</button>
+          <button class="btn btn-sci" data-val="sqrt(">√</button>
+          <button class="btn btn-sci" data-val="Math.PI">π</button>
+          <button class="btn btn-sci" data-val="Math.E">e</button>
+          <button class="btn btn-sci" data-val="^">xʸ</button>
+          <button class="btn btn-sci" data-val="%">%</button>
+        </div>
+
+        <!-- Main grid -->
+        <div class="btn-grid main-grid">
+          <!-- Row 1 -->
+          <button class="btn btn-clear" id="clearBtn">C</button>
+          <button class="btn btn-op" data-val="(">(</button>
+          <button class="btn btn-op" data-val=")">)</button>
+          <button class="btn btn-del" id="delBtn">⌫</button>
+
+          <!-- Row 2 -->
+          <button class="btn btn-num" data-val="7">7</button>
+          <button class="btn btn-num" data-val="8">8</button>
+          <button class="btn btn-num" data-val="9">9</button>
+          <button class="btn btn-op" data-val="/">÷</button>
+
+          <!-- Row 3 -->
+          <button class="btn btn-num" data-val="4">4</button>
+          <button class="btn btn-num" data-val="5">5</button>
+          <button class="btn btn-num" data-val="6">6</button>
+          <button class="btn btn-op" data-val="*">×</button>
+
+          <!-- Row 4 -->
+          <button class="btn btn-num" data-val="1">1</button>
+          <button class="btn btn-num" data-val="2">2</button>
+          <button class="btn btn-num" data-val="3">3</button>
+          <button class="btn btn-op" data-val="-">−</button>
+
+          <!-- Row 5 -->
+          <button class="btn btn-num zero" data-val="0">0</button>
+          <button class="btn btn-num" data-val=".">.</button>
+          <button class="btn btn-equals" id="equalsBtn">=</button>
+          <button class="btn btn-op" data-val="+">+</button>
+        </div>
+
+        <!-- Voice button -->
+        <button class="voice-btn" id="voiceBtn" title="Voice Input">🎤 Voice</button>
+
+      </div><!-- /calculator -->
+
+      <!-- ── History panel ── -->
+      <div class="history-panel hidden" id="historyPanel">
+        <div class="history-header">
+          <span>History</span>
+          <button class="icon-btn" id="clearHistory">🗑</button>
+        </div>
+        <ul class="history-list" id="historyList">
+          <li class="history-empty">No history yet.</li>
+        </ul>
+      </div>
+
+    </div><!-- /main-layout -->
+  </div><!-- /app -->
+
+  <script src="script.js"></script>
+</body>
+</html>
